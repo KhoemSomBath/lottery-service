@@ -1,0 +1,1 @@
+UPDATE vntwo_temp_drawing SET is_recent = :isRecent, is_set_win = 0 WHERE code = :drawCode

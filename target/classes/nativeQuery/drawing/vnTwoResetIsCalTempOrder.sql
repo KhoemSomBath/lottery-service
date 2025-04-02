@@ -1,0 +1,1 @@
+UPDATE vntwo_temp_orders SET is_cal_reward = 0 WHERE date(draw_at) = date(:drawAt)

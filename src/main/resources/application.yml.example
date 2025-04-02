@@ -1,0 +1,49 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: system-service
+
+  profile: ${PROFILE:local}
+  # database setting
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/lottery_db?createDatabaseIfNotExist=true&useUnicode=yes&characterEncoding=UTF-8&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password:
+#    hikari:
+#      connection-timeout: 30000
+#      minimum-idle: 3
+#      maximum-pool-size: 5
+#      idle-timeout: 10000
+#      max-lifetime: 30000
+#      leak-detection-threshold: 10000
+  AWS_CONFIG:
+    REGION: ${REGION:ap-southeast-1}
+    BUCKET: ${BUCKET}
+    KEY: ${KEY}
+    SECRET: ${SECRET}
+    VISIBILITY: public
+    URL:
+      BASE: s3.amazonaws.com
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  security:
+    OAUTH2:
+      CLIENT_ID: LotteryV2System@123
+      CLIENT_SECRET: LotteryV2System@123@#2%9999^&$
+
+    JWT_KEY: LotteryV2System@LeAP123!@#
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 30MB
+      max-request-size: 30MB
+native-query:
+  package-scan: com.hacknovation.systemservice
+  file:
+    sufix: sql
