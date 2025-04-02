@@ -1,1 +1,0 @@
-DELETE FROM tn_temp_win_order_items WHERE dc = :drawCode
